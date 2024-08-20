@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculandora de metas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+        <img src="https://precopopular.vtexassets.com/assets/vtex/assets-builder/precopopular.store-theme/3.0.22/svg/header-mob-4___77804c80b7e9715cd139b079b2d25c64.svg">
+    </header>
+    <div class="container">
+        <form class="form">
+            <div class="form-control">
+                <label for="">Meta do mês</label>
+                <div><span>R$</span><input class="metaMes" type="number" required></div>
+            </div>
+            <div class="form-control">
+                <label for="">Valor total de vendas até o momento</label>
+                <div><span>R$</span><input class="valorTotalVendas" type="number" required></div>
+            </div>
+            <div class="form-control">
+                <label for="">Número total de dias de funcionamento no mês</label>
+                <input class="diasMes" type="number" required>
+            </div>
+            <div class="form-control">
+                <label for="">Número total de dias que a loja já funcionou no mês</label>
+                <input class="diasFunc" type="number" required>
+            </div>
+            <button class="btn" type="submit">CALCULAR</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="resultato">
+            Resultado:
+            <ul>
+                <li>Média de vendas por dia <span class="mediaVendasDia">------</span></li>
+                <li>Meta atual de vendas por dia <span class="metaVendasDia">------</span></li>
+                <li>Valor restante para atingir a meta <span class="valorRestMeta">------</span></li>
+                <li>Porcentagem da meta atingida<span class="porcentagem">------</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <footer>
+            <p>
+                2023 © - Todos os direitos reservados | Projeto pessoal | RUAN FERNANDES
+            </p>
+        </footer>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
