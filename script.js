@@ -63,3 +63,7 @@ function mostraResultados() {
     porcentagem.innerText = calculaPorcentagemAlcançada();
     barra.style.width = `${barraPercent()}%`;
 }
+
+/*$(document).ready(function() {
+    $('.metaMes').mask()("#.##0,00", {reverse: true});
+})*/

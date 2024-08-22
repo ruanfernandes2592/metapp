@@ -17,11 +17,11 @@
         <form class="form">
             <div class="form-control">
                 <label for="">Meta do mês</label>
-                <div><span>R$</span><input class="metaMes" type="number" required></div>
+                <input class="metaMes" id="metaMes" type="number" placeholder="R$ 0,00" required>
             </div>
             <div class="form-control">
                 <label for="">Valor total de vendas até o momento</label>
-                <div><span>R$</span><input class="valorTotalVendas" type="number" required></div>
+                <input class="valorTotalVendas" type="number" placeholder="R$ 0,00" required>
             </div>
             <div class="form-control">
                 <label for="">Número total de dias de funcionamento no mês</label>
@@ -59,6 +59,14 @@
             </p>
         </footer>
     </div>
+    <script src="./jquery-1.11.0.min.js"></script>
+    <script src="./jquery.mask.min.js"></script>
     <script src="./script.js"></script>
+    <script>
+        /*$(document).ready(function() {
+            $('.metaMes').mask("#.##0,00", {reverse: true});
+            $('.valorTotalVendas').mask("#.##0,00", {reverse: true});
+    })*/
+    </script>
 </body>
 </html>
