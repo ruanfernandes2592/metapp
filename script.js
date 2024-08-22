@@ -9,6 +9,7 @@ const mediaVD = document.querySelector('.mediaVendasDia');
 const metaVD = document.querySelector('.metaVendasDia');
 const valorRestMeta = document.querySelector('.valorRestMeta');
 const porcentagem = document.querySelector('.porcentagem');
+const barra = document.querySelector('.barra-interna');
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -42,14 +43,23 @@ function calculaPorcentagemAlcançada() {
     return res.toFixed(1) + '%';
 }
 
+function barraPercent() {
+    let res = (valorTotalVendas.value / metaMes.value) * 100;
+    return res.toFixed(1);
+}
+
+
+
 function formatarValor() {
     const valorFormatado = res.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     return valorFormatado;
 }
+
 
 function mostraResultados() {
     mediaVD.innerText = calculaMediaVendasDia();
     metaVD.innerText = calculaMetaVendasDia();
     valorRestMeta.innerText = calculaValorRest();
     porcentagem.innerText = calculaPorcentagemAlcançada();
+    barra.style.width = `${barraPercent()}%`;
 }
