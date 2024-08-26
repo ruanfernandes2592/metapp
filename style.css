@@ -7,16 +7,17 @@
 }
 
 body {
-    background-color: #00963c;
+    background-image: linear-gradient(90deg, #00963c, rgb(17, 71, 57));
 }
 
 header {
     margin: 22px 0 8px 0;
 }
 
-.container {
+.container, header, footer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form, .resultato, footer {

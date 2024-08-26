@@ -10,18 +10,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="container">
+    <header>
         <img src="https://precopopular.vtexassets.com/assets/vtex/assets-builder/precopopular.store-theme/3.0.22/svg/header-mob-4___77804c80b7e9715cd139b079b2d25c64.svg">
     </header>
     <div class="container">
         <form class="form">
             <div class="form-control">
                 <label for="">Meta do mês</label>
-                <input class="metaMes" id="metaMes" type="number" placeholder="R$ 0,00" required>
+                <input class="metaMes" id="metaMes" type="text" placeholder="R$ 0,00" required>
             </div>
             <div class="form-control">
                 <label for="">Valor total de vendas até o momento</label>
-                <input class="valorTotalVendas" type="number" placeholder="R$ 0,00" required>
+                <input class="valorTotalVendas" type="text" placeholder="R$ 0,00" required>
             </div>
             <div class="form-control">
                 <label for="">Número total de dias de funcionamento no mês</label>
@@ -33,8 +33,6 @@
             </div>
             <button class="btn" type="submit">CALCULAR</button>
         </form>
-    </div>
-    <div class="container">
         <div class="resultato">
             Resultado:
             <ul>
@@ -51,9 +49,7 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="container">
-        <footer class="container">
+        <footer>
             <p>
                 2024 © - Todos os direitos reservados | Projeto pessoal | RUAN FERNANDES
             </p>
@@ -62,11 +58,5 @@
     <script src="./jquery-1.11.0.min.js"></script>
     <script src="./jquery.mask.min.js"></script>
     <script src="./script.js"></script>
-    <script>
-        /*$(document).ready(function() {
-            $('.metaMes').mask("#.##0,00", {reverse: true});
-            $('.valorTotalVendas').mask("#.##0,00", {reverse: true});
-    })*/
-    </script>
 </body>
 </html>

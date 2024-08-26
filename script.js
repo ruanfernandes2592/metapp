@@ -1,7 +1,13 @@
 const form = document.querySelector('.form');
 
-const metaMes = form.querySelector('.metaMes');
-const valorTotalVendas = form.querySelector('.valorTotalVendas');
+$(document).ready(function() {
+    $('.metaMes').mask("0.000.000,00", {reverse: true});
+    $('.valorTotalVendas').mask("0.000.000,00", {reverse: true});
+})
+
+let metaMes = form.querySelector('.metaMes');
+let valorTotalVendas = form.querySelector('.valorTotalVendas');
+
 const diasMes = form.querySelector('.diasMes');
 const diasFunc = form.querySelector('.diasFunc');
 
@@ -15,36 +21,50 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     mostraResultados();
-})
+});
+
+function removeFormatMetaMes() {
+    let metamesStr = metaMes.value.replace(/[^0-9]/g, '');
+    const metaMesNum = parseInt(metamesStr);
+
+    return metaMesNum / 100; // Valor dividido por 100 para eliminar 2 casas decimais
+}
+
+function removeFormatMetValorTotalVendas() {
+    let valorTotalVendasStr = valorTotalVendas.value.replace(/[^0-9]/g, '');
+    const valorTotalVendasNum = parseInt(valorTotalVendasStr);
+
+    return valorTotalVendasNum / 100; // Valor dividido por 100 para eliminar 2 casas decimais
+}
 
 function calculaMediaVendasDia() {
-    let res = valorTotalVendas.value / diasFunc.value;
+    let res = removeFormatMetValorTotalVendas() / diasFunc.value;
     const valorFormatado = res.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     return valorFormatado;
 }
 
 function calculaMetaVendasDia() {
-    let res = (metaMes.value - valorTotalVendas.value) / (diasMes.value - diasFunc.value);
+    let res = (removeFormatMetaMes() - removeFormatMetValorTotalVendas()) / (diasMes.value - diasFunc.value);
     const valorFormatado = res.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     return valorFormatado;
 }
 
 function calculaValorRest() {
-    let res = metaMes.value - valorTotalVendas.value;
+    let res = removeFormatMetaMes() - removeFormatMetValorTotalVendas();
     const valorFormatado = res.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     return valorFormatado;
 }
 
 function calculaPorcentagemAlcançada() {
-    let res = (valorTotalVendas.value / metaMes.value) * 100;
+    let res = (removeFormatMetValorTotalVendas() / removeFormatMetaMes()) * 100;
     return res.toFixed(1) + '%';
 }
 
 function barraPercent() {
-    let res = (valorTotalVendas.value / metaMes.value) * 100;
+    let res = (removeFormatMetValorTotalVendas() / removeFormatMetaMes()) * 100;
     return res.toFixed(1);
 }
 
@@ -63,7 +83,3 @@ function mostraResultados() {
     porcentagem.innerText = calculaPorcentagemAlcançada();
     barra.style.width = `${barraPercent()}%`;
 }
-
-/*$(document).ready(function() {
-    $('.metaMes').mask()("#.##0,00", {reverse: true});
-})*/
