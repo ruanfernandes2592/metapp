@@ -3,10 +3,12 @@ const form = document.querySelector('.form');
 $(document).ready(function() {
     $('.metaMes').mask("0.000.000,00", {reverse: true});
     $('.valorTotalVendas').mask("0.000.000,00", {reverse: true});
+    $('.diasMes').mask("00");
+    $('.diasFunc').mask("00");
 })
 
-let metaMes = form.querySelector('.metaMes');
-let valorTotalVendas = form.querySelector('.valorTotalVendas');
+const metaMes = form.querySelector('.metaMes');
+const valorTotalVendas = form.querySelector('.valorTotalVendas');
 
 const diasMes = form.querySelector('.diasMes');
 const diasFunc = form.querySelector('.diasFunc');
@@ -68,18 +70,14 @@ function barraPercent() {
     return res.toFixed(1);
 }
 
-
-
-function formatarValor() {
-    const valorFormatado = res.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    return valorFormatado;
-}
-
-
 function mostraResultados() {
     mediaVD.innerText = calculaMediaVendasDia();
     metaVD.innerText = calculaMetaVendasDia();
     valorRestMeta.innerText = calculaValorRest();
     porcentagem.innerText = calculaPorcentagemAlcançada();
+    mediaVD.style.color = '#222222d0';
+    metaVD.style.color = '#222222d0';
+    valorRestMeta.style.color = '#222222d0';
+    porcentagem.style.color = '#222222d0';
     barra.style.width = `${barraPercent()}%`;
 }
