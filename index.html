@@ -1,62 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculandora de metas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <img src="https://precopopular.vtexassets.com/assets/vtex/assets-builder/precopopular.store-theme/3.0.22/svg/header-mob-4___77804c80b7e9715cd139b079b2d25c64.svg">
+      <!--<img src="https://precopopular.vtexassets.com/assets/vtex/assets-builder/precopopular.store-theme/3.0.22/svg/header-mob-4___77804c80b7e9715cd139b079b2d25c64.svg">-->
+      <img src="./logo.png" alt="" />
     </header>
     <div class="container">
-        <form class="form">
-            <div class="form-control">
-                <label for="">Meta do mês</label>
-                <input class="metaMes" id="metaMes" type="text" placeholder="R$ 0,00" required>
-            </div>
-            <div class="form-control">
-                <label for="">Valor total de vendas até o momento</label>
-                <input class="valorTotalVendas" type="text" placeholder="R$ 0,00" required>
-            </div>
-            <div class="form-control">
-                <label for="">Número de dias que funcionará no mês</label>
-                <input class="diasMes" type="number" placeholder="00" required>
-            </div>
-            <div class="form-control">
-                <label for="">Número de dias que já funcionou no mês</label>
-                <input class="diasFunc" type="number" placeholder="00" required>
-            </div>
-            <button class="btn" type="submit">CALCULAR</button>
-        </form>
-        <div class="resultato">
-            Resultado:
-            <ul>
-                <li>Média de vendas por dia <span class="mediaVendasDia">R$ 0,00</span></li>
-                <li>Meta atual de vendas por dia <span class="metaVendasDia">R$ 0,00</span></li>
-                <li>Valor restante para atingir a meta <span class="valorRestMeta">R$ 0,00</span></li>
-                <li>Porcentagem da meta atingida
-                    <div class="barra-externa">
-                        <div class="barra-interna">
-                            
-                        </div>
-                    </div>
-                    <span class="porcentagem">0%</span>
-                </li>
-            </ul>
+      <form class="form">
+        <div class="form-control">
+          <label for="">Meta do mês</label>
+          <input
+            class="metaMes"
+            id="metaMes"
+            type="text"
+            placeholder="R$ 0,00"
+            required
+          />
         </div>
-        <footer>
-            <p>
-                <i>2024 © - Todos os direitos reservados | Projeto pessoal | RUAN FERNANDES</i>
-            </p>
-        </footer>
+        <div class="form-control">
+          <label for="">Valor total de vendas até o momento</label>
+          <input
+            class="valorTotalVendas"
+            type="text"
+            placeholder="R$ 0,00"
+            required
+          />
+        </div>
+        <div class="form-control">
+          <label for="">Número de dias que funcionará no mês</label>
+          <input class="diasMes" type="number" placeholder="00" required />
+        </div>
+        <div class="form-control">
+          <label for="">Número de dias que já funcionou no mês</label>
+          <input class="diasFunc" type="number" placeholder="00" required />
+        </div>
+        <button class="btn" type="submit">CALCULAR</button>
+      </form>
+      <div class="resultato">
+        Resultado:
+        <ul>
+          <li>
+            Média de vendas por dia <span class="mediaVendasDia">R$ 0,00</span>
+          </li>
+          <li>
+            Meta atual de vendas por dia
+            <span class="metaVendasDia">R$ 0,00</span>
+          </li>
+          <li>
+            Valor restante para atingir a meta
+            <span class="valorRestMeta">R$ 0,00</span>
+          </li>
+          <li>
+            Porcentagem da meta atingida
+            <div class="barra-externa">
+              <div class="barra-interna"></div>
+            </div>
+            <span class="porcentagem">0%</span>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <p>
+          <i
+            >2025 © - Todos os direitos reservados | Projeto pessoal | RUAN
+            FERNANDES</i
+          >
+        </p>
+      </footer>
     </div>
     <script src="./jquery-1.11.0.min.js"></script>
     <script src="./jquery.mask.min.js"></script>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
